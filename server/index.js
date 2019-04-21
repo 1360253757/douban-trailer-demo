@@ -5,11 +5,14 @@
  */
 const koa = require('koa');
 const app = new koa();
-const {normal} = require('./tpl');
+const ejs = require('ejs');
+const {htmlTpl, ejsTpl} = require('./tpl');
 
 app.use(async (ctx, next) => {
     ctx.type = 'text/html';
-    ctx.body  = normal;
+    ctx.body  = ejs.render(ejsTpl, {
+        name: 'Lance'
+    });
 });
 
 app.listen(3000);

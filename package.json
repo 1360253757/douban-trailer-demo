@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/1360253757/douban-trailer-demo#readme",
   "dependencies": {
+    "ejs": "^2.6.1",
     "koa": "^2.7.0"
   }
 }

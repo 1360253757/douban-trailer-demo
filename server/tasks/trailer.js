@@ -1,13 +1,13 @@
 /**
  *
  * @author: 李梁
- * @date: 2019/4/22  20:21
+ * @date: 2019/4/28  20:22
  */
 const cp = require('child_process');
 const {resolve} = require('path');
 
 (async () => {
-    const script = resolve(__dirname, '../crawler/trailer-list.js');
+    const script = resolve(__dirname, '../crawler/video.js');
     const child = cp.fork(script, []);
     let invoked = false;
 
@@ -26,9 +26,7 @@ const {resolve} = require('path');
     });
 
     child.on('message', data => {
-        let result = data.result;
-        
-        console.log(result);
+        console.log(data);
     })
 
 })();
